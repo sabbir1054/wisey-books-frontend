@@ -7,22 +7,26 @@ import SingleBookCard from "../../Components/SingleBookCard/SingleBookCard";
 import { useGetBooksQuery } from "../../redux/features/books/bookApi";
 import { IBook } from "../../types/book";
 const AllBooksPage = () => {
-  const { data, isLoading, error } = useGetBooksQuery(undefined);
-  if (data) {
-    console.log(data);
-  }
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 10;
 
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
-    console.log("New page:", newPage);
   };
+  const { data, isLoading, error } = useGetBooksQuery(currentPage);
+  // total page count
+
+  let totalPages = 10;
+  if (data?.meta?.total % 10 === 0) {
+    totalPages = data?.meta?.total / 10;
+  } else {
+    totalPages = Math.trunc(data?.meta?.total / 10) + 1;
+  }
+
   return (
     <div style={{ minHeight: "100vh" }}>
       <SearchBar />
 
-      <Container>
+      <Container style={{ paddingTop: "5vh", paddingBottom: "5vh" }}>
         {isLoading && <CircularProgress disableShrink />}
         <Grid container>
           {data &&

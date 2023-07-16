@@ -3,7 +3,8 @@ import { api } from "../../api/ApiSlice";
 const bookApi = api.injectEndpoints({
   endpoints: (builder) => ({
     getBooks: builder.query({
-      query: () => "/books",
+      query: (pageNo = 1) => `/books/?page=${pageNo}`,
+      providesTags: ["books"],
     }),
   }),
 });

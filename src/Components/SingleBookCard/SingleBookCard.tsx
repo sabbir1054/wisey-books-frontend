@@ -5,26 +5,12 @@ import { Box, IconButton, Tooltip, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { NavLink } from "react-router-dom";
-import { IBook } from "../../redux/features/books/bookSlice";
-
+import { IBook } from "../../types/book"; 
 interface IProps {
   book: IBook;
 }
 const SingleBookCard = ({ book }: IProps) => {
-  // const book = {
-  //   title: "Mindfulness in Motion",
-  //   author: "Ray Bradbury",
-  //   genre: "Dystopian",
-  //   publicationDate: "October 19, 1953",
-  //   reviews: [
-  //     {
-  //       fullName: "Mezba Vai",
-  //       feedback:
-  //         "Mindfulness in Motion is a transformative self-help book that encourages readers to embrace mindfulness through movement. Packed with practical exercises and insightful wisdom, it's a life-changing read.",
-  //     },
-  //   ],
-  //   imgUrl: "https://i.ibb.co/TrbcD0x/freefall.jpg",
-  // };
+
   return (
     <div>
       <Card
