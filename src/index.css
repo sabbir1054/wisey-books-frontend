@@ -4,7 +4,7 @@
 .swiper-button-prev,
 .swiper-button-next {
   transition: all 0.3s ease-in;
-  background-color:#02020241;
+  background-color: #02020241;
   padding: 10px 12px;
   color: rgb(255, 255, 255);
 }
@@ -13,4 +13,10 @@
 .swiper-button-next:hover {
   background-color: rgba(0, 0, 0, 0.651);
   cursor: pointer;
+}
+.css-v4u5dn-MuiInputBase-root-MuiInput-root:after {
+  border-bottom: 2px solid #d54b96 !important;
+}
+.css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: #d54b96 !important;
 }

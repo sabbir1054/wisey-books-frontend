@@ -32,7 +32,7 @@ const SingleBookCard = ({ book }: IProps) => {
           maxWidth: 200,
           border: "1px solid #f2f2f2",
           transition: "all 0.3s easy-in-out",
-          "&:hover": { border: "2px solid #F8E9EC" },
+          "&:hover": { border: "2px solid #F8E9EC", cursor: "pointer" },
         }}
         elevation={false}
       >

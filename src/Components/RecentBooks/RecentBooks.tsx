@@ -34,7 +34,7 @@ const RecentBooks = () => {
           {data &&
             books?.map((book: IBook) => (
               <SwiperSlide key={book.title}>
-                <SingleBookCard book={book} />
+                <SingleBookCard book={book} key={book._id} />
               </SwiperSlide>
             ))}
         </Swiper>

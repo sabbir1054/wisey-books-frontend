@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { NavLink } from "react-router-dom";
 const pages = [
-  { name: "Books", path: "all-books" },
+  { name: "Books", path: "books" },
   { name: "Add Books", path: "add-books" },
 ];
 const settings = ["Wishlist", "Read Soon", "Logout"];
