@@ -23,7 +23,7 @@ const AllBooksPage = () => {
   }
 
   return (
-    <div style={{ minHeight: "100vh" }}>
+    <div style={{ paddingBottom: "5vh" }}>
       <SearchBar />
 
       <Container style={{ paddingTop: "5vh", paddingBottom: "5vh" }}>
