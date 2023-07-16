@@ -1,0 +1,8 @@
+
+
+.heroWrapper{
+    background-image: url('https://i.ibb.co/zxsyvgg/background.jpg');
+    min-height: 20vh;
+    background-position: center;
+    background-size: cover;
+}

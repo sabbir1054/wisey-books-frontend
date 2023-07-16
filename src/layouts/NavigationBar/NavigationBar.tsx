@@ -32,6 +32,7 @@ const NavigationBar = () => {
   return (
     <div>
       <AppBar
+        position="static"
         elevation={0}
         sx={{
           backgroundColor: "white",
