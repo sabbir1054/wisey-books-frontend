@@ -1,4 +1,4 @@
-import { Button, ButtonGroup } from "@mui/material";
+import MainLayout from "./layouts/MainLayouts/MainLayout";
 
 function App() {
   const data = "July 12, 1985";
@@ -7,14 +7,7 @@ function App() {
 
   return (
     <>
-      <ButtonGroup
-        variant="contained"
-        aria-label="outlined primary button group"
-      >
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup>
+      <MainLayout />
     </>
   );
 }
