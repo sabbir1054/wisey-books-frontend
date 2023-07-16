@@ -5,21 +5,26 @@ import { Box, IconButton, Tooltip, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { NavLink } from "react-router-dom";
-const SingleBookCard = () => {
-  const book = {
-    title: "Mindfulness in Motion",
-    author: "Ray Bradbury",
-    genre: "Dystopian",
-    publicationDate: "October 19, 1953",
-    reviews: [
-      {
-        fullName: "Mezba Vai",
-        feedback:
-          "Mindfulness in Motion is a transformative self-help book that encourages readers to embrace mindfulness through movement. Packed with practical exercises and insightful wisdom, it's a life-changing read.",
-      },
-    ],
-    imgUrl: "https://i.ibb.co/TrbcD0x/freefall.jpg",
-  };
+import { IBook } from "../../redux/features/books/bookSlice";
+
+interface IProps {
+  book: IBook;
+}
+const SingleBookCard = ({ book }: IProps) => {
+  // const book = {
+  //   title: "Mindfulness in Motion",
+  //   author: "Ray Bradbury",
+  //   genre: "Dystopian",
+  //   publicationDate: "October 19, 1953",
+  //   reviews: [
+  //     {
+  //       fullName: "Mezba Vai",
+  //       feedback:
+  //         "Mindfulness in Motion is a transformative self-help book that encourages readers to embrace mindfulness through movement. Packed with practical exercises and insightful wisdom, it's a life-changing read.",
+  //     },
+  //   ],
+  //   imgUrl: "https://i.ibb.co/TrbcD0x/freefall.jpg",
+  // };
   return (
     <div>
       <Card
@@ -33,7 +38,11 @@ const SingleBookCard = () => {
       >
         <div style={{ display: "flex", justifyContent: "center" }}>
           <img
-            src="https://i.ibb.co/TrbcD0x/freefall.jpg"
+            src={`${
+              book?.imgUrl
+                ? book?.imgUrl
+                : "https://i.ibb.co/Mft4w0h/no-image.png"
+            }`}
             alt=""
             style={{ height: "200px" }}
           />
@@ -73,12 +82,12 @@ const SingleBookCard = () => {
                 "&:hover": { color: "#005dc1", textDecoration: "underline" },
               }}
             >
-              {book.title}
+              {book?.title}
             </Typography>
           </NavLink>
           <Typography variant="body2" color="text.secondary">
-            {book.publicationDate} <br />
-            Author: {book.author} Genre:{book.genre}
+            {book?.publicationDate} <br />
+            Author: {book?.author} Genre:{book?.genre}
           </Typography>
         </CardContent>
       </Card>

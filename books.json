@@ -1,0 +1,702 @@
+[
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Dystopian",
+    "publicationDate": "July 11, 1960",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/Yp738nb/62c828aa79fbc1-18394179.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Horror",
+    "publicationDate": "June 8, 1949",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/W3x2Yxf/62c4586cd8ebb1-04606438.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Contemporary",
+    "publicationDate": "April 10, 1925",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/Tkn2HZv/62c8202cc47d37-43973751.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Romance",
+    "publicationDate": "January 28, 1813",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/xj8w3DX/62c60018a08985-50236666.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genre": "Young Adult",
+    "publicationDate": "July 16, 1951",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/VJ1YprW/62c60132c54866-45099350.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "genre": "Fantasy",
+    "publicationDate": "October 18, 1851",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/mhhwX8X/62cabad33a0ae8-77385311.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "genre": "Science Fiction",
+    "publicationDate": "July 29, 1954",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/7kLpYzp/62cae01fe35580-70445632.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "To the Lighthouse",
+    "author": "Virginia Woolf",
+    "genre": "Contemporary",
+    "publicationDate": "May 5, 1927",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/jZBvBxP/62cbf98bdc8556-48555732.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "genre": "Dystopian",
+    "publicationDate": "February 2, 1932",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/GP7JpLG/62cc2cc83a7ae0-74391054.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Odyssey",
+    "author": "Homer",
+    "genre": "Fantasy",
+    "publicationDate": "July 29, 1784",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/zJ6V3HZ/62cc4fc374c448-77792689.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "publicationDate": "September 21, 1937",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/GRbvbjj/62cc5d4557b991-80191400.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "genre": "Fantasy",
+    "publicationDate": "October 16, 1847",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/BLcSqg3/62cc38c3c96c25-16259785.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Little Prince",
+    "author": "Antoine de Saint-Exupéry",
+    "genre": "Fantasy",
+    "publicationDate": "April 6, 1943",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/Ry5zGY0/62e50d462ce284-48414487.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Thriller",
+    "publicationDate": "April 4, 1687",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/9ZWYsP0/62e51d80d86736-68426819.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Alice's Adventures in Wonderland",
+    "author": "Lewis Carroll",
+    "genre": "Science Fiction",
+    "publicationDate": "July 4, 1865",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/5FcbwK4/62e52cd7d5b408-43993033.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Thriller",
+    "publicationDate": "November 4, 1880",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/GxcsvzB/62e70bc074c3f9-51492930.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Wuthering Heights",
+    "author": "Emily Brontë",
+    "genre": "Romance",
+    "publicationDate": "December 14, 1847",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/PhzSXkx/63e40764f1cca1-09081672.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "genre": "Contemporary",
+    "publicationDate": "May 30, 1967",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/tHqv4tq/63ee996db7f660-28016090.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "genre": "Fantasy",
+    "publicationDate": "June 20, 1890",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/K5XJsQy/64b13a7b115ce9-54790512.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "genre": "Horror",
+    "publicationDate": "January 1, 1818",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/D5bFQTn/630d3adb874990-48067146.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "genre": "Non-Fiction",
+    "publicationDate": "1988",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/nCDkXZs/630e8ed7bdb744-21414546.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Don Quixote",
+    "author": "Miguel de Cervantes",
+    "genre": "Contemporary",
+    "publicationDate": "May 15, 1605",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/CsM0Nh6/631b58aa952eb1-20994793.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Divine Comedy",
+    "author": "Dante Alighieri",
+    "genre": "Fantasy",
+    "publicationDate": "June 7, 1320",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/KhDNXxS/632ecf70b27a41-26658327.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Lord of the Flies",
+    "author": "William Golding",
+    "genre": "Thriller",
+    "publicationDate": "September 17, 1954",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/Kx2JbZM/635c5b61507e81-40933511.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Count of Monte Cristo",
+    "author": "Alexandre Dumas",
+    "genre": "Fantasy",
+    "publicationDate": "July 18, 1844",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/6B2dXRd/637a1eb663f8f6-09254381.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "genre": "Historical Fiction",
+    "publicationDate": "May 29, 2003",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/nR7TkRB/63e16ad35f9ff2-57803820.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "genre": "Historical Fiction",
+    "publicationDate": "September 16, 1862",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/PhzSXkx/63e40764f1cca1-09081672.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Slaughterhouse-Five",
+    "author": "Kurt Vonnegut",
+    "genre": "Science Fiction",
+    "publicationDate": "March 31, 1969",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/GxcsvzB/62e70bc074c3f9-51492930.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Gone with the Wind",
+    "author": "Margaret Mitchell",
+    "genre": "Historical Fiction",
+    "publicationDate": "June 30, 1936",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/5kS4thf/62e70d4b9a9bc2-75639722.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Shining",
+    "author": "Stephen King",
+    "genre": "Horror",
+    "publicationDate": "January 28, 1977",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/kM6j1nb/62e97f1958aa51-45107184.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Adventures of Tom Sawyer",
+    "author": "Mark Twain",
+    "genre": "Fantasy",
+    "publicationDate": "July 21, 1876",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/ZdWxCK2/62ed1893c6f666-12039597.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "publicationDate": "June 26, 1997",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/hfM1Snk/62f6d4381849e6-66292792.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Sun Also Rises",
+    "author": "Ernest Hemingway",
+    "genre": "Contemporary",
+    "publicationDate": "October 22, 1926",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/Fw4zDmZ/62fa9bca5edde6-44505244.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "A Tale of Two Cities",
+    "author": "Charles Dickens",
+    "genre": "Historical Fiction",
+    "publicationDate": "February 10, 1859",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/6RyDKZM/62fea89f0c7408-31196739.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "genre": "Mystery",
+    "publicationDate": "March 18, 2003",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/dWxr2LZ/63be777c80d7f3-92481528.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Grapes of Wrath",
+    "author": "John Steinbeck",
+    "genre": "Historical Fiction",
+    "publicationDate": "April 14, 1939",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/5hV8MB6/63db83446a6259-75000027.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Hound of the Baskervilles",
+    "author": "Arthur Conan Doyle",
+    "genre": "Mystery",
+    "publicationDate": "July 5, 1902",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/5FcbwK4/62e52cd7d5b408-43993033.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Scarlet Letter",
+    "author": "Nathaniel Hawthorne",
+    "genre": "Historical Fiction",
+    "publicationDate": "November 6, 1850",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/9ZWYsP0/62e51d80d86736-68426819.png",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "genre": "Science Fiction",
+    "publicationDate": "October 12, 1979",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/Ry5zGY0/62cc38c3c96c25-16259785.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "genre": "Historical Fiction",
+    "publicationDate": "June 2, 1877",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/GRbvbjj/62cc5d4557b991-80191400.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Giver",
+    "author": "Lois Lowry",
+    "genre": "Science Fiction",
+    "publicationDate": "April 26, 1993",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/mhhwX8X/62cabad33a0ae8-77385311.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Adventures of Huckleberry Finn",
+    "author": "Mark Twain",
+    "genre": "Fantasy",
+    "publicationDate": "April 10, 1884",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/KWFcm7k/red-queen.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Handmaid's Tale",
+    "author": "Margaret Atwood",
+    "genre": "Dystopian",
+    "publicationDate": "December 10, 1985",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/0K0tgnF/book-7.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Adventures of Sherlock Holmes",
+    "author": "Arthur Conan Doyle",
+    "genre": "Mystery",
+    "publicationDate": "September 10, 1892",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/44kPVBp/economic.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Catch-22",
+    "author": "Joseph Heller",
+    "genre": "Satire",
+    "publicationDate": "November 10, 1961",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/s5MnGdn/the-girl-of-ink-and-stars.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Mindfulness in Motion",
+    "author": "Ray Bradbury",
+    "genre": "Dystopian",
+    "publicationDate": "October 19, 1953",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "Mindfulness in Motion is a transformative self-help book that encourages readers to embrace mindfulness through movement. Packed with practical exercises and insightful wisdom, it's a life-changing read."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/TrbcD0x/freefall.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Alchemist's Legacy",
+    "author": "John Steinbeck",
+    "genre": "Contemporary",
+    "publicationDate": "August 3, 1937",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Alchemist's Legacy is an enchanting fantasy that weaves alchemy and magic into an unforgettable quest. Its eloquent prose and well-drawn characters make it a must-read for any fantasy connoisseur"
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/MG9smVF/boring-girls-a-novel.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Echoes of Eternity",
+    "author": "S.E. Hinton",
+    "genre": "Contemporary",
+    "publicationDate": "April 24, 1967",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "Echoes of Eternity is a mesmerizing sci-fi adventure that immerses readers in an intergalactic odyssey. The author's imagination knows no bounds, making it a thrilling escape from reality."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/bbBt1r4/clever-lands.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "The Art of Simplicity",
+    "author": "Franz Kafka",
+    "genre": "Existential",
+    "publicationDate": "August 10, 1915",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "The Art of Simplicity offers a profound journey into minimalism and mindful living. With practical insights and heartfelt anecdotes, this book is a valuable guide for those seeking a more fulfilling and balanced life."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/qD239GP/lloyd.jpg",
+    "userEmail": "sabbir@gmail.com"
+  },
+  {
+    "title": "Whispers of the Past",
+    "author": "Ernest Hemingway",
+    "genre": "Contemporary",
+    "publicationDate": "September 1, 1952",
+    "reviews": [
+      {
+        "fullName": "Mezba Vai",
+        "feedback": "Whispers of the Pastis a hauntingly beautiful historical fiction masterpiece, skillfully blending romance and mystery. Its rich narrative and well-researched setting make it a delightful addition to any bookshelf."
+      }
+    ],
+    "imgUrl": "https://i.ibb.co/ZgFJnZZ/shattered.jpg",
+    "userEmail": "sabbir@gmail.com"
+  }
+]

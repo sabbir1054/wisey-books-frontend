@@ -1,17 +1,20 @@
 import { Container, Typography } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
-// import './styles.css';
 import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useGetBooksQuery } from "../../redux/features/books/bookApi";
+import { IBook } from "../../redux/features/books/bookSlice";
 import SingleBookCard from "../SingleBookCard/SingleBookCard";
 const RecentBooks = () => {
+  const { data, isLoading, error } = useGetBooksQuery(undefined);
+  const books: IBook[] = data?.data;
   return (
     <div>
       <Container sx={{ marginY: "15vh" }}>
         <Typography variant="h5" paddingBottom={4}>
-         
           Recently Added Books{" "}
         </Typography>
         <Swiper
@@ -26,33 +29,14 @@ const RecentBooks = () => {
           modules={[Pagination, Autoplay]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <SingleBookCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleBookCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleBookCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleBookCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleBookCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleBookCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleBookCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleBookCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleBookCard />
-          </SwiperSlide>
+          {isLoading && <CircularProgress disableShrink />}
+
+          {data &&
+            books?.map((book: IBook) => (
+              <SwiperSlide key={book.title}>
+                <SingleBookCard book={book} />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </Container>
     </div>
