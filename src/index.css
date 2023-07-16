@@ -1,0 +1,16 @@
+/* .swiper-pagination-bullet {
+  background-color: #FAF1FF;
+} */
+.swiper-button-prev,
+.swiper-button-next {
+  transition: all 0.3s ease-in;
+  background-color:#FAF1FF;
+  padding: 10px 12px;
+  color: white;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #b98ad4;
+  cursor: pointer;
+}
