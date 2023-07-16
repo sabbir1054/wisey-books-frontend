@@ -6,7 +6,7 @@
   transition: all 0.3s ease-in;
   background-color:#FAF1FF;
   padding: 10px 12px;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .swiper-button-prev:hover,

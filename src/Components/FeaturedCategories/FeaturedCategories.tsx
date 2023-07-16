@@ -15,6 +15,7 @@ const FeaturedCategories = () => {
                 "&:hover": { cursor: "Pointer" },
               }}
             >
+              <img src="/assets/hearts.png" alt="" width={"30px"} />
               <Typography variant="subtitle1">Romance</Typography>
             </Box>
           </Grid>
@@ -26,6 +27,7 @@ const FeaturedCategories = () => {
                 "&:hover": { cursor: "Pointer" },
               }}
             >
+              <img src="/assets/science-fiction.png" alt="" width={"30px"} />
               <Typography variant="subtitle1">Science Fiction</Typography>
             </Box>
           </Grid>
@@ -37,6 +39,7 @@ const FeaturedCategories = () => {
                 "&:hover": { cursor: "Pointer" },
               }}
             >
+              <img src="assets/annonymous.png" alt="" width={"30px"} />
               <Typography variant="subtitle1">Mystery</Typography>
             </Box>
           </Grid>
@@ -48,6 +51,8 @@ const FeaturedCategories = () => {
                 "&:hover": { cursor: "Pointer" },
               }}
             >
+              {" "}
+              <img src="/assets/book.png" alt="" width={"30px"} />
               <Typography variant="subtitle1">Fantasy</Typography>
             </Box>
           </Grid>
