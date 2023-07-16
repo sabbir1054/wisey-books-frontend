@@ -4,13 +4,13 @@
 .swiper-button-prev,
 .swiper-button-next {
   transition: all 0.3s ease-in;
-  background-color:#FAF1FF;
+  background-color:#02020241;
   padding: 10px 12px;
   color: rgb(255, 255, 255);
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  background-color: #b98ad4;
+  background-color: rgba(0, 0, 0, 0.651);
   cursor: pointer;
 }
