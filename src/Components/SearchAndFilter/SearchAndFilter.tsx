@@ -81,9 +81,12 @@ const SearchAndFilter = ({
   const handleChange = (event: any) => {
     setSearchTerm(event.target.value);
   };
-  const resetFilter = () => {
-    setYear("");
+
+  const resetGenre = () => {
     setGenre("");
+  };
+  const resetYear = () => {
+    setYear("");
   };
   return (
     <div>
@@ -118,7 +121,7 @@ const SearchAndFilter = ({
         />
       </div>
 
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div>
         <Button
           onClick={handleClickOpen}
           sx={{ color: "#D54B96", marginTop: "10px", marginBottom: "10px" }}
@@ -127,21 +130,38 @@ const SearchAndFilter = ({
           Filter
         </Button>
 
-        <Button
-          size="small"
-          variant="outlined"
-          disableElevation
-          onClick={resetFilter}
-          sx={{
-            borderColor: "#D54B96",
-            color: "#D54B96",
-            marginTop: "10px",
-            marginBottom: "10px",
-          }}
-          startIcon={<ClearIcon />}
-        >
-          Clear Filter
-        </Button>
+        {genre && (
+          <Button
+            onClick={resetGenre}
+            variant="outlined"
+            sx={{
+              borderColor: "#D54B96",
+              color: "#D54B96",
+              marginTop: "10px",
+              marginBottom: "10px",
+            }}
+            endIcon={<ClearIcon />}
+            size="small"
+          >
+            {genre}
+          </Button>
+        )}
+        {year && (
+          <Button
+            size="small"
+            onClick={resetYear}
+            variant="outlined"
+            sx={{
+              borderColor: "#D54B96",
+              color: "#D54B96",
+              marginTop: "10px",
+              marginBottom: "10px",
+            }}
+            endIcon={<ClearIcon />}
+          >
+            {year}
+          </Button>
+        )}
 
         <Dialog disableEscapeKeyDown open={open} onClose={handleClose}>
           <DialogTitle>Enter you filter option</DialogTitle>
