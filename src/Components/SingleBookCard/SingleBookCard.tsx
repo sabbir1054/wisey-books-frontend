@@ -1,11 +1,13 @@
 import AddIcon from "@mui/icons-material/Add";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
-import { Box, IconButton, Tooltip, Typography } from "@mui/material";
+import { Box, IconButton, Shadows, Tooltip, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { NavLink } from "react-router-dom";
-import { IBook } from "../../types/book"; 
+import { IBook } from "../../types/book";
+
+
 interface IProps {
   book: IBook;
 }
@@ -20,7 +22,7 @@ const SingleBookCard = ({ book }: IProps) => {
           transition: "all 0.3s easy-in-out",
           "&:hover": { border: "2px solid #F8E9EC", cursor: "pointer" },
         }}
-        elevation={false}
+        elevation={0}
       >
         <div style={{ display: "flex", justifyContent: "center" }}>
           <img

@@ -2,17 +2,25 @@ import { Box, Container, Grid } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useState } from "react";
 import CustomPagination from "../../Components/CustomPagination/CustomePagination";
-import SearchBar from "../../Components/SearchAndFilter/SearchBar";
+import SearchAndFilter from "../../Components/SearchAndFilter/SearchAndFilter";
 import SingleBookCard from "../../Components/SingleBookCard/SingleBookCard";
 import { useGetBooksQuery } from "../../redux/features/books/bookApi";
 import { IBook } from "../../types/book";
 const AllBooksPage = () => {
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [genre, setGenre] = useState<string>("");
+  const [year, setYear] = useState<string>("");
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [search, setSearch] = useState<string>("");
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
   };
-  const { data, isLoading, error } = useGetBooksQuery(currentPage);
+  const { data, isLoading, error } = useGetBooksQuery({
+    page: currentPage,
+    search: search,
+    genre: genre,
+    year: year,
+  });
   // total page count
 
   let totalPages = 10;
@@ -22,9 +30,26 @@ const AllBooksPage = () => {
     totalPages = Math.trunc(data?.meta?.total / 10) + 1;
   }
 
+  const handleSearchBtn = () => {
+    setSearch(searchTerm);
+  };
+
+  // console.log(year, genre);
+
   return (
     <div style={{ paddingBottom: "5vh" }}>
-      <SearchBar />
+      <Container>
+        {" "}
+        <SearchAndFilter
+          handleSearchBtn={handleSearchBtn}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          genre={genre}
+          setGenre={setGenre}
+          year={year}
+          setYear={setYear}
+        />
+      </Container>
 
       <Container style={{ paddingTop: "5vh", paddingBottom: "5vh" }}>
         {isLoading && <CircularProgress disableShrink />}
