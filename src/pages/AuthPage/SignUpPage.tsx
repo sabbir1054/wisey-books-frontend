@@ -10,21 +10,28 @@ import {
   Typography,
 } from "@mui/material";
 
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
+import { NavLink } from "react-router-dom";
 const SignUpPage = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleEmailChange = (e) => {
+  const handleEmailChange = (e: {
+    target: { value: SetStateAction<string> };
+  }) => {
     setEmail(e.target.value);
   };
-  const handleFullNameChange = (e) => {
+  const handleFullNameChange = (e: {
+    target: { value: SetStateAction<string> };
+  }) => {
     setFullName(e.target.value);
   };
 
-  const handlePasswordChange = (e) => {
+  const handlePasswordChange = (e: {
+    target: { value: SetStateAction<string> };
+  }) => {
     setPassword(e.target.value);
   };
 
@@ -149,9 +156,13 @@ const SignUpPage = () => {
                     },
                   }}
                 >
-                  Sign In
+                  Sign UP
                 </Button>
               </Container>
+              <Typography variant={"body2"} textAlign={'center'}>
+                Already Have An Account ?{" "}
+                <NavLink to="/signin">Sign in Here</NavLink>{" "}
+              </Typography>
             </Box>
           </Grid>
         </Grid>
