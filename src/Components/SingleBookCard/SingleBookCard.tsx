@@ -1,17 +1,21 @@
 import AddIcon from "@mui/icons-material/Add";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
-import { Box, IconButton, Shadows, Tooltip, Typography } from "@mui/material";
+import { Box, IconButton, Tooltip, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { IBook } from "../../types/book";
-
-
+import styles from "./SingleBookCard.module.css";
 interface IProps {
   book: IBook;
 }
 const SingleBookCard = ({ book }: IProps) => {
+  const navigate = useNavigate();
+
+  const goToDetailsPage = () => {
+    navigate(`/books/${book?._id}`);
+  };
 
   return (
     <div>
@@ -20,12 +24,17 @@ const SingleBookCard = ({ book }: IProps) => {
           maxWidth: 200,
           border: "1px solid #f2f2f2",
           transition: "all 0.3s easy-in-out",
-          "&:hover": { border: "2px solid #F8E9EC", cursor: "pointer" },
+          "&:hover": { border: "2px solid #F8E9EC" },
         }}
         elevation={0}
       >
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          className={styles.cardImg}
+          style={{ display: "flex", justifyContent: "center" }}
+          onClick={goToDetailsPage}
+        >
           <img
+            className=""
             src={`${
               book?.imgUrl
                 ? book?.imgUrl
@@ -61,7 +70,10 @@ const SingleBookCard = ({ book }: IProps) => {
             </Tooltip>
           </Box>
 
-          <NavLink to="/" style={{ textDecoration: "none", color: "black" }}>
+          <NavLink
+            to={`/books/${book?._id}`}
+            style={{ textDecoration: "none", color: "black" }}
+          >
             <Typography
               gutterBottom
               variant="subtitle2"

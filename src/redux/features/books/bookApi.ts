@@ -7,7 +7,10 @@ const bookApi = api.injectEndpoints({
         `/books/?page=${page}&searchTerm=${search}&genre=${genre}&publicationYear=${year}`,
       providesTags: ["page", "searchTerm", "genre", "year"],
     }),
+    getSingleBook: builder.query({
+      query: (id) => `/books/${id}`,
+    }),
   }),
 });
 
-export const { useGetBooksQuery } = bookApi;
+export const { useGetBooksQuery, useGetSingleBookQuery } = bookApi;

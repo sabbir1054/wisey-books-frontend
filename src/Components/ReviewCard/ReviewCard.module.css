@@ -1,0 +1,22 @@
+.card {
+  /* max-width: 300px; */
+  margin: auto;
+  padding: 16px; /* You can change this value to adjust the padding */
+  /* text-align: center; */
+}
+
+.avatar {
+  width: 56px; /* You can change this value to adjust the avatar size */
+  height: 56px; /* You can change this value to adjust the avatar size */
+  margin: auto;
+  padding: 20px;
+}
+
+.name {
+  margin-top: 16px; /* You can change this value to adjust the margin */
+}
+
+.feedback {
+    
+  margin-top: 8px; /* You can change this value to adjust the margin */
+}

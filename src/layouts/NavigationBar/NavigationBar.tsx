@@ -1,3 +1,4 @@
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Button, MenuItem } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -89,7 +90,7 @@ const NavigationBar = () => {
                 <></>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <img src="/assets/user.png" alt="" width={30} />
+                    <AccountCircleIcon sx={{ color: "#452C81",fontSize:"40px" }} />
                   </IconButton>
                 </Tooltip>
                 <Menu
