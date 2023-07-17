@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   Box,
@@ -9,13 +10,51 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
+import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useUserSignInMutation } from "../../redux/features/user/userApi";
 
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+const loginfail = () => toast.error("Please Enter Valid Email and Password");
+const loginSuccessfull = () => toast.success("Login Successful");
+
 const SignInPage = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const from = searchParams.get("from");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loginData, setLoginData] = useState({});
+
+  const [userSignIn, { data, isLoading, error }] = useUserSignInMutation();
+  const dispatch = useDispatch();
+
+  if (isLoading) {
+    console.log("loading......");
+  }
+
+  if (data) {
+    console.log(data);
+  }
+
+  useEffect(() => {
+    window.localStorage.setItem("user", JSON.stringify(data?.data));
+    if (error) {
+      loginfail();
+    }
+    if (data) {
+      loginSuccessfull();
+      if (from) {
+        navigate(from);
+      } else {
+        navigate("/");
+      }
+    }
+  }, [data, error]);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -31,9 +70,13 @@ const SignInPage = () => {
 
   const handleSubmit = () => {
     // Handle form submission logic here
+    userSignIn({ email: email, password: password });
+    setEmail("");
+    setPassword("");
     console.log("Email:", email);
     console.log("Password:", password);
   };
+
   return (
     <div style={{ backgroundColor: "#FFF6F7", minHeight: "100vh" }}>
       <Container
@@ -76,6 +119,12 @@ const SignInPage = () => {
           </Grid>
           <Grid item xs={12} md={6} border={"1px solid #e2e2e2"}>
             <Box sx={{ paddingY: 10 }}>
+              <Box display={"flex"} justifyContent={"center"}>
+                {isLoading && (
+                  <CircularProgress disableShrink sx={{ color: "#F75454" }} />
+                )}
+                <Toaster />
+              </Box>
               <Typography variant="h5" fontWeight={"bold"} textAlign={"center"}>
                 <span
                   style={{
@@ -93,6 +142,7 @@ const SignInPage = () => {
                 <TextField
                   label="Email"
                   type="email"
+                  required={true}
                   variant="standard"
                   value={email}
                   onChange={handleEmailChange}
@@ -100,6 +150,7 @@ const SignInPage = () => {
                   margin="normal"
                 />
                 <TextField
+                  required={true}
                   label="Password"
                   type={showPassword ? "text" : "password"}
                   variant="standard"
@@ -138,7 +189,7 @@ const SignInPage = () => {
                   Sign In
                 </Button>
                 <Typography variant={"body2"} textAlign={"center"}>
-                  You don't Have any account {" "}
+                  You don't Have any account{" "}
                   <NavLink to="/signup">Sign up Here</NavLink>{" "}
                 </Typography>
               </Container>

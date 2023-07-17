@@ -9,7 +9,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { setUser } from "../../redux/features/user/userSlice";
+import { useAppSelector } from "../../redux/hook";
 const pages = [
   { name: "Books", path: "books" },
   { name: "Add Books", path: "add-books" },
@@ -17,7 +20,8 @@ const pages = [
 const settings = ["Wishlist", "Read Soon", "Logout"];
 
 const NavigationBar = () => {
-  const user = false;
+  const { user } = useAppSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
@@ -30,6 +34,12 @@ const NavigationBar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const handleLogOut = () => {
+    localStorage.clear();
+    dispatch(setUser(""));
+  };
+
   return (
     <div>
       <AppBar
@@ -111,11 +121,31 @@ const NavigationBar = () => {
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}
                 >
-                  {settings.map((setting) => (
-                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                      <Typography textAlign="center">{setting}</Typography>
-                    </MenuItem>
-                  ))}
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <NavLink
+                      to="/wishlist"
+                      style={{ textDecoration: "none", color: "gray" }}
+                    >
+                      <Typography textAlign="center">Wishlist</Typography>
+                    </NavLink>
+                  </MenuItem>
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <NavLink
+                      to="/read-soon"
+                      style={{ textDecoration: "none", color: "gray" }}
+                    >
+                      <Typography textAlign="center">Read Soon</Typography>
+                    </NavLink>
+                  </MenuItem>
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <NavLink
+                      onClick={handleLogOut}
+                      to="/"
+                      style={{ textDecoration: "none", color: "gray" }}
+                    >
+                      <Typography textAlign="center">Log out</Typography>
+                    </NavLink>
+                  </MenuItem>
                 </Menu>
               </Box>
             ) : (

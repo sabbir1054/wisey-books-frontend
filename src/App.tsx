@@ -1,9 +1,14 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import MainLayout from "./layouts/MainLayouts/MainLayout";
+import { setUser } from "./redux/features/user/userSlice";
 
 function App() {
-  const data = "July 12, 1985";
-  const publicationYear = new Date(data).getFullYear();
-  console.log(publicationYear);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setUser(localStorage.getItem("user")));
+  }, [dispatch]);
 
   return (
     <>
