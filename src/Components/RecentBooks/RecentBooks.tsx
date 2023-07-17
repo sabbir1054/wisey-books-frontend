@@ -6,11 +6,13 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useGetBooksQuery } from "../../redux/features/books/bookApi";
-import { IBook } from "../../redux/features/books/bookSlice";
+import { IBook } from "../../types/book.ts";
 import SingleBookCard from "../SingleBookCard/SingleBookCard";
 const RecentBooks = () => {
-  const { data, isLoading, error } = useGetBooksQuery(undefined);
+  const { data, isLoading, error } = useGetBooksQuery({});
   const books: IBook[] = data?.data;
+  console.log(data?.data);
+
   return (
     <div>
       <Container sx={{ marginY: "15vh" }}>
@@ -33,7 +35,7 @@ const RecentBooks = () => {
 
           {data &&
             books?.map((book: IBook) => (
-              <SwiperSlide key={book.title}>
+              <SwiperSlide key={book._id}>
                 <SingleBookCard book={book} key={book._id} />
               </SwiperSlide>
             ))}

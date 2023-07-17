@@ -17,7 +17,7 @@ const pages = [
 const settings = ["Wishlist", "Read Soon", "Logout"];
 
 const NavigationBar = () => {
-  const user = true;
+  const user = false;
 
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
@@ -90,7 +90,9 @@ const NavigationBar = () => {
                 <></>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <AccountCircleIcon sx={{ color: "#452C81",fontSize:"40px" }} />
+                    <AccountCircleIcon
+                      sx={{ color: "#452C81", fontSize: "40px" }}
+                    />
                   </IconButton>
                 </Tooltip>
                 <Menu
