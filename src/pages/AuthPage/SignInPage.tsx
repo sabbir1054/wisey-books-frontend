@@ -33,13 +33,7 @@ const SignInPage = () => {
   const [userSignIn, { data, isLoading, error }] = useUserSignInMutation();
   const dispatch = useDispatch();
 
-  if (isLoading) {
-    console.log("loading......");
-  }
 
-  if (data) {
-    console.log(data);
-  }
 
   useEffect(() => {
     window.localStorage.setItem("user", JSON.stringify(data?.data));
@@ -73,8 +67,7 @@ const SignInPage = () => {
     userSignIn({ email: email, password: password });
     setEmail("");
     setPassword("");
-    console.log("Email:", email);
-    console.log("Password:", password);
+  
   };
 
   return (

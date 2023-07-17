@@ -10,28 +10,54 @@ import {
   Typography,
 } from "@mui/material";
 
-import { SetStateAction, useState } from "react";
-import { NavLink } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
+import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useUserSignUpMutation } from "../../redux/features/user/userApi";
+import { isEmailValid } from "../../utils/isValidEmailChecker";
+
+const registerfail = () => toast.error("Please submit again");
+const validEmail = () => toast.error("Enter valid email");
+const registerSuccessful = () => toast.success("Login Successful");
+
 const SignUpPage = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleEmailChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
+  // react-router
+  const navigate = useNavigate();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const from = searchParams.get("from");
+
+  const [userSignUp, { data, isLoading, error }] = useUserSignUpMutation();
+
+  useEffect(() => {
+    window.localStorage.setItem("user", JSON.stringify(data?.data));
+    if (error) {
+      registerfail();
+    }
+    if (data) {
+      registerSuccessful();
+      if (from) {
+        navigate(from);
+      } else {
+        navigate("/");
+      }
+    }
+  }, [data, error]);
+
+  const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-  const handleFullNameChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
+  const handleFullNameChange = (e) => {
     setFullName(e.target.value);
   };
 
-  const handlePasswordChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
+  const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
 
@@ -40,9 +66,16 @@ const SignUpPage = () => {
   };
 
   const handleSubmit = () => {
-    // Handle form submission logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
+    if (!isEmailValid(email)) {
+       validEmail();
+    } else {
+      // Handle form submission logic here
+      userSignUp({ email: email, password: password, fullName: fullName });
+      setEmail("");
+      setPassword("");
+      setFullName("");
+    }
+    
   };
   return (
     <div style={{ backgroundColor: "#FFF6F7", minHeight: "100vh" }}>
@@ -86,6 +119,12 @@ const SignUpPage = () => {
           </Grid>
           <Grid item xs={12} md={6} border={"1px solid #e2e2e2"}>
             <Box sx={{ paddingY: 10 }}>
+              <Box display={"flex"} justifyContent={"center"}>
+                {isLoading && (
+                  <CircularProgress disableShrink sx={{ color: "#F75454" }} />
+                )}
+                <Toaster />
+              </Box>
               <Typography variant="h5" fontWeight={"bold"} textAlign={"center"}>
                 <span
                   style={{
@@ -159,7 +198,7 @@ const SignUpPage = () => {
                   Sign UP
                 </Button>
               </Container>
-              <Typography variant={"body2"} textAlign={'center'}>
+              <Typography variant={"body2"} textAlign={"center"}>
                 Already Have An Account ?{" "}
                 <NavLink to="/signin">Sign in Here</NavLink>{" "}
               </Typography>
