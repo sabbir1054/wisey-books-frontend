@@ -23,6 +23,7 @@ const AllBooksPage = () => {
   });
   // total page count
 
+
   let totalPages = 10;
   if (data?.meta?.total % 10 === 0) {
     totalPages = data?.meta?.total / 10;
