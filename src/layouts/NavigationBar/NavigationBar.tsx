@@ -20,7 +20,7 @@ const pages = [
 
 const NavigationBar = () => {
   const { user } = useAppSelector((state) => state?.user);
-  console.log(user);
+ 
   
   const dispatch = useDispatch();
 
@@ -124,7 +124,7 @@ const NavigationBar = () => {
                 >
                   <MenuItem onClick={handleCloseUserMenu}>
                     <NavLink
-                      to="/wishlist"
+                      to="/myCollection"
                       style={{ textDecoration: "none", color: "gray" }}
                     >
                       <Typography textAlign="center">Wishlist</Typography>
@@ -132,7 +132,7 @@ const NavigationBar = () => {
                   </MenuItem>
                   <MenuItem onClick={handleCloseUserMenu}>
                     <NavLink
-                      to="/read-soon"
+                      to="/myCollection"
                       style={{ textDecoration: "none", color: "gray" }}
                     >
                       <Typography textAlign="center">Read Soon</Typography>

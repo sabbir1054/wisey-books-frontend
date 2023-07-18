@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { useAppSelector } from "../redux/hook";
 
 interface IProps {
   children: ReactNode;
@@ -8,11 +7,10 @@ interface IProps {
 
 export default function PrivateRoute({ children }: IProps) {
   const pathName = useLocation();
-  const { user, isLoading } = useAppSelector((state) => state.user);
-  if (isLoading) {
-    return <p>Loading</p>;
-  }
-  if (!user && !isLoading) {
+  // const { user, isLoading } = useAppSelector((state) => state.user);
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if (!user) {
     return <Navigate to={"/signin"} state={{ path: pathName }}></Navigate>;
   }
   return children;

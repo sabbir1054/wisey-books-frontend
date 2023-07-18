@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useEffect, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useUserSignInMutation } from "../../redux/features/user/userApi";
@@ -32,12 +32,12 @@ const SignInPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    window.localStorage.setItem("user", JSON.stringify(data?.data));
     if (error) {
       loginfail();
     }
     if (data) {
       loginSuccessfull();
+      localStorage.setItem("user", JSON.stringify(data?.data));
       navigate("/");
     }
   }, [data, error]);

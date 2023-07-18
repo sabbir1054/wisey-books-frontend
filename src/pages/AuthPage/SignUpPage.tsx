@@ -33,13 +33,12 @@ const SignUpPage = () => {
   const [userSignUp, { data, isLoading, error }] = useUserSignUpMutation();
 
   useEffect(() => {
-    window.localStorage.setItem("user", JSON.stringify(data?.data));
     if (error) {
       registerfail();
     }
     if (data) {
       registerSuccessful();
-
+      localStorage.setItem("user", JSON.stringify(data?.data));
       navigate("/");
     }
   }, [data, error]);

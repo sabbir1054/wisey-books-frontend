@@ -5,6 +5,7 @@ import AllBooksPage from "../pages/AllBooksPage/AllBooksPage";
 import SignInPage from "../pages/AuthPage/SignInPage";
 import SignUpPage from "../pages/AuthPage/SignUpPage";
 import BookDetailsPage from "../pages/BookDetailsPage/BookDetailsPage";
+import CollectionPage from "../pages/CollectionPage/CollectionPage";
 import HomePage from "../pages/HomePage/HomePage";
 import NotFoundPage from "../pages/NotFound/NotFoundPage";
 import UpdateBookPage from "../pages/UpdateBookPage/UpdateBookPage";
@@ -42,6 +43,14 @@ const routes = createBrowserRouter([
           <PrivateRoute>
             <UpdateBookPage />
           </PrivateRoute>
+        ),
+      },
+      {
+        path: "/myCollection",
+        element: (
+          <PrivateRoute>
+            <CollectionPage />
+           </PrivateRoute>
         ),
       },
     ],
