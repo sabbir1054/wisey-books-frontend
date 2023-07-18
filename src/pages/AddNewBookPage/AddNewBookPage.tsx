@@ -1,20 +1,42 @@
 import { Button, Container, Grid, TextField, Typography } from "@mui/material";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
+import { useParams } from "react-router-dom";
+import { useAddBookMutation } from "../../redux/features/books/bookApi";
 import { useAppSelector } from "../../redux/hook";
 import { IBook } from "../../types/book";
-
+const addBookErrorMessage = () => toast.error("Book not added !");
+const addBookSuccessMessage = () => toast.success("Successfully Book added !");
 const AddNewBookPage = () => {
+  const params = useParams();
   const { user } = useAppSelector((state) => state.user);
+  const [addBook, { data, isLoading, error }] = useAddBookMutation({});
+  console.log(error);
+
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
-    const onSubmit = (bookData: IBook): void => {
-        bookData.user = user?._id;
-    console.log(bookData);
+  const onSubmit = (bookData: IBook): void => {
+    bookData.user = user._id;
+    addBook(bookData);
   };
+ 
+
+  useEffect(() => {
+    if (error) {
+      addBookErrorMessage();
+    }
+
+    if (data) {
+      addBookSuccessMessage();
+      reset();
+    }
+  }, [data, error]);
 
   return (
     <div>

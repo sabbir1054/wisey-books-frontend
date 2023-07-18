@@ -12,7 +12,7 @@ function App() {
   if (userData !== "undefined") {
     data = JSON.parse(userData);
   }
-  console.log(userData !== "undefined");
+
 
   useEffect(() => {
     dispatch(setUser(data));
