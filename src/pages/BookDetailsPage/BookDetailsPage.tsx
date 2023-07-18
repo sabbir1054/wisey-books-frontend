@@ -12,11 +12,13 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
+import { useEffect } from "react";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 import ReviewCard from "../../Components/ReviewCard/ReviewCard";
 import ReviewForm from "../../Components/ReviewForm/ReviewForm";
 import {
+  useDeleteBookMutation,
   useGetReviewQuery,
   useGetSingleBookQuery,
 } from "../../redux/features/books/bookApi";
@@ -25,16 +27,21 @@ import { IComment } from "../../types/book";
 // toster
 const UserError = () => toast.error("You are not owner !");
 const UserSuccess = () => toast.success("You are  owner ");
+const deleteErrorM = () => toast.error("Failed to delete !");
+const deleteSuccess = () => toast.success("Delete Successful");
 // const UserError = () => toast.error("You are not owner !");
 
 const BookDetailsPage = () => {
   const params = useParams();
   const navigate = useNavigate();
+  const [
+    deleteBook,
+    { data: deleteData, isLoading: deleteIsLoading, error: deleteError },
+  ] = useDeleteBookMutation("");
   const { user } = useAppSelector((state) => state.user);
   const { data: reviews } = useGetReviewQuery(params.id);
 
   const { data, isLoading, error } = useGetSingleBookQuery(params?.id);
-  console.log(data);
 
   const handleEdit = () => {
     if (!(user?._id === data?.data?.user)) {
@@ -46,8 +53,20 @@ const BookDetailsPage = () => {
   const handleDelete = () => {
     if (!(user?._id === data?.data?.user)) {
       UserError();
+    } else {
+      deleteBook(params.id);
     }
   };
+
+  useEffect(() => {
+    if (deleteError) {
+      deleteErrorM();
+    }
+    if (deleteData) {
+      deleteSuccess();
+      navigate("/");
+    }
+  }, [deleteError, deleteData]);
 
   return (
     <div>
