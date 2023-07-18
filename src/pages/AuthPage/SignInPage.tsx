@@ -14,7 +14,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useUserSignInMutation } from "../../redux/features/user/userApi";
 
 const loginfail = () => toast.error("Please Enter Valid Email and Password");
@@ -22,9 +22,7 @@ const loginSuccessfull = () => toast.success("Login Successful");
 
 const SignInPage = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const from = searchParams.get("from");
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -33,8 +31,6 @@ const SignInPage = () => {
   const [userSignIn, { data, isLoading, error }] = useUserSignInMutation();
   const dispatch = useDispatch();
 
-
-
   useEffect(() => {
     window.localStorage.setItem("user", JSON.stringify(data?.data));
     if (error) {
@@ -42,11 +38,7 @@ const SignInPage = () => {
     }
     if (data) {
       loginSuccessfull();
-      if (from) {
-        navigate(from);
-      } else {
-        navigate("/");
-      }
+      navigate("/");
     }
   }, [data, error]);
 
@@ -67,7 +59,6 @@ const SignInPage = () => {
     userSignIn({ email: email, password: password });
     setEmail("");
     setPassword("");
-  
   };
 
   return (
@@ -116,7 +107,7 @@ const SignInPage = () => {
                 {isLoading && (
                   <CircularProgress disableShrink sx={{ color: "#F75454" }} />
                 )}
-                <Toaster />
+                {/* <Toaster /> */}
               </Box>
               <Typography variant="h5" fontWeight={"bold"} textAlign={"center"}>
                 <span

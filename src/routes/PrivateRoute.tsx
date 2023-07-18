@@ -7,13 +7,12 @@ interface IProps {
 }
 
 export default function PrivateRoute({ children }: IProps) {
-  const { user } = useAppSelector((state) => state.user);
-  
-
+  const data = localStorage.getItem('user');
+  const user = JSON.stringify(data);
   const pathName = useLocation();
 
   if (!user) {
-    return <Navigate to={"/signin"} state={{ path: pathName }}></Navigate>;
+    return <Navigate to={"/login"} state={{ path: pathName }}></Navigate>;
   }
   return children;
 }

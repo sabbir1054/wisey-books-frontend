@@ -15,12 +15,11 @@ import { setUser } from "../../redux/features/user/userSlice";
 import { useAppSelector } from "../../redux/hook";
 const pages = [
   { name: "Books", path: "books" },
-  { name: "Add Books", path: "add-books" },
+  { name: "Add Books", path: "books/add-books" },
 ];
-const settings = ["Wishlist", "Read Soon", "Logout"];
 
 const NavigationBar = () => {
-  const { user } = useAppSelector((state) => state.user);
+  const { user } = useAppSelector((state) => state?.user);
   console.log(user);
   
   const dispatch = useDispatch();

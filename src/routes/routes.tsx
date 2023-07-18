@@ -24,11 +24,7 @@ const routes = createBrowserRouter([
         element: <AllBooksPage />,
       },
       {
-        path: "/books/:id",
-        element: <BookDetailsPage />,
-      },
-      {
-        path: "/books/add-new",
+        path: "/books/add-books",
         element: (
           <PrivateRoute>
             <AddNewBookPage />
@@ -36,7 +32,12 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: "/books/update-book",
+        path: "/books/:id",
+        element: <BookDetailsPage />,
+      },
+
+      {
+        path: "/books/update-book/:id",
         element: (
           <PrivateRoute>
             <UpdateBookPage />

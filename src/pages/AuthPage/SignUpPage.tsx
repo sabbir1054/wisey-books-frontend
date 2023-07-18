@@ -13,7 +13,7 @@ import {
 import CircularProgress from "@mui/material/CircularProgress";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useUserSignUpMutation } from "../../redux/features/user/userApi";
 import { isEmailValid } from "../../utils/isValidEmailChecker";
 
@@ -29,9 +29,6 @@ const SignUpPage = () => {
 
   // react-router
   const navigate = useNavigate();
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const from = searchParams.get("from");
 
   const [userSignUp, { data, isLoading, error }] = useUserSignUpMutation();
 
@@ -42,11 +39,8 @@ const SignUpPage = () => {
     }
     if (data) {
       registerSuccessful();
-      if (from) {
-        navigate(from);
-      } else {
-        navigate("/");
-      }
+
+      navigate("/");
     }
   }, [data, error]);
 
@@ -67,7 +61,7 @@ const SignUpPage = () => {
 
   const handleSubmit = () => {
     if (!isEmailValid(email)) {
-       validEmail();
+      validEmail();
     } else {
       // Handle form submission logic here
       userSignUp({ email: email, password: password, fullName: fullName });
@@ -75,7 +69,6 @@ const SignUpPage = () => {
       setPassword("");
       setFullName("");
     }
-    
   };
   return (
     <div style={{ backgroundColor: "#FFF6F7", minHeight: "100vh" }}>

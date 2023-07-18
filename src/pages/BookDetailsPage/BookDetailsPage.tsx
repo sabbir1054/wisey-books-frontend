@@ -13,7 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import toast, { Toaster } from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ReviewCard from "../../Components/ReviewCard/ReviewCard";
 import ReviewForm from "../../Components/ReviewForm/ReviewForm";
 import { useGetSingleBookQuery } from "../../redux/features/books/bookApi";
@@ -25,6 +25,7 @@ const UserSuccess = () => toast.success("You are  owner ");
 // const UserError = () => toast.error("You are not owner !");
 
 const BookDetailsPage = () => {
+  const navigate = useNavigate();
   const { user } = useAppSelector((state) => state.user);
 
   const params = useParams();
@@ -34,6 +35,8 @@ const BookDetailsPage = () => {
   const handleEdit = () => {
     if (!(user?._id === data?.data?.user)) {
       UserError();
+    } else {
+      navigate(`/books/update-book/${params?.id}`);
     }
   };
   const handleDelete = () => {
@@ -89,7 +92,7 @@ const BookDetailsPage = () => {
               </Box>
             </Grid>
             <Grid item xs={12} md={8}>
-              <Toaster />
+              {/* <Toaster /> */}
               <Box>
                 <Typography variant="h4" textTransform={"uppercase"}>
                   {data?.data?.title}
