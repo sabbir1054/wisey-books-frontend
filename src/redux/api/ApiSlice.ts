@@ -5,7 +5,7 @@ export const api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://book-wise-gamma.vercel.app/api/v1/",
   }),
-  tagTypes: ["page", "searchTerm", "genre", "year", "user", "review","books"],
+  tagTypes: ["page", "searchTerm", "genre", "year", "user", "review","books","wishlist","readSoon","finishedList"],
 
   endpoints: () => ({}),
 });
