@@ -11,4 +11,5 @@ export type IBook = {
   publicationDate: string;
   reviews?: IComment[];
   imgUrl?: string;
+  user: string;
 };

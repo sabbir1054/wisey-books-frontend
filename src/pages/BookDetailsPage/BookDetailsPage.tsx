@@ -12,11 +12,14 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 import ReviewCard from "../../Components/ReviewCard/ReviewCard";
 import ReviewForm from "../../Components/ReviewForm/ReviewForm";
-import { useGetSingleBookQuery } from "../../redux/features/books/bookApi";
+import {
+  useGetReviewQuery,
+  useGetSingleBookQuery,
+} from "../../redux/features/books/bookApi";
 import { useAppSelector } from "../../redux/hook";
 import { IComment } from "../../types/book";
 // toster
@@ -25,10 +28,11 @@ const UserSuccess = () => toast.success("You are  owner ");
 // const UserError = () => toast.error("You are not owner !");
 
 const BookDetailsPage = () => {
+  const params = useParams();
   const navigate = useNavigate();
   const { user } = useAppSelector((state) => state.user);
+  const { data: reviews } = useGetReviewQuery(params.id);
 
-  const params = useParams();
   const { data, isLoading, error } = useGetSingleBookQuery(params?.id);
   console.log(data);
 
@@ -189,8 +193,8 @@ const BookDetailsPage = () => {
                 <ReviewForm bookId={data?.data?._id} />
               </Box>
               <Box>
-                {data?.data?.reviews?.length &&
-                  data?.data?.reviews?.map((review: IComment) => (
+                {reviews &&
+                  reviews.data?.map((review: IComment) => (
                     <>
                       <ReviewCard
                         key={review.fullName}
