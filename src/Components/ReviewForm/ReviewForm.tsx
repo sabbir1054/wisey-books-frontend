@@ -1,10 +1,21 @@
 import CreateIcon from "@mui/icons-material/Create";
-import { Button, Modal, TextField } from "@mui/material";
-import { useState } from "react";
+import { Button, CircularProgress, Modal, TextField } from "@mui/material";
+import { useEffect, useState } from "react";
+import { useAppSelector } from "../../redux/hook";
 import styles from "./ReviewForm.module.css";
-const ReviewForm = () => {
+
+import toast, { Toaster } from "react-hot-toast";
+import { usePostReviewMutation } from "../../redux/features/books/bookApi";
+
+const errorMessage = () => toast.error("Review Not Submit ! Try Again");
+const successMessage = () => toast.success("Submit done !");
+
+const ReviewForm = ({ bookId }) => {
+  const { user } = useAppSelector((state) => state.user);
   const [open, setOpen] = useState(false);
   const [feedback, setFeedback] = useState("");
+  // const [review, setReview] = useState({});
+  const [postReview, { data, isLoading, error }] = usePostReviewMutation({});
 
   const handleOpen = () => {
     setOpen(true);
@@ -16,12 +27,30 @@ const ReviewForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const review = {
+      id: bookId,
+      data: { fullName: user?.fullName, feedback: feedback },
+    };
+    postReview(review);
+
     handleClose();
   };
 
+  useEffect(() => {
+    if (error) {
+      errorMessage();
+    }
+    if (data) {
+      successMessage();
+      setFeedback("");
+    }
+  }, [error, data]);
+
   return (
     <div>
+      <Toaster />
       <Button
+        disabled={!user && true}
         onClick={handleOpen}
         variant={"outlined"}
         disableElevation
@@ -47,6 +76,7 @@ const ReviewForm = () => {
         className={styles.ModalContainer}
       >
         <div className={styles.ModalWrapper}>
+          {isLoading && <CircularProgress disableShrink />}
           <form onSubmit={handleSubmit}>
             <TextField
               label="Feedback Message"

@@ -21,6 +21,8 @@ const settings = ["Wishlist", "Read Soon", "Logout"];
 
 const NavigationBar = () => {
   const { user } = useAppSelector((state) => state.user);
+  console.log(user);
+  
   const dispatch = useDispatch();
 
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(

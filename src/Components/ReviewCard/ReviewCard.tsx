@@ -10,25 +10,7 @@ interface ReviewCardProps {
   feedback: string;
 }
 
-// const useStyles = makeStyles((theme: { spacing: (arg0: number) => any; }) => ({
-//   card: {
-//     maxWidth: 300,
-//     margin: 'auto',
-//     padding: theme.spacing(2),
-//     textAlign: 'center',
-//   },
-//   avatar: {
-//     width: theme.spacing(7),
-//     height: theme.spacing(7),
-//     margin: 'auto',
-//   },
-//   name: {
-//     marginTop: theme.spacing(2),
-//   },
-//   feedback: {
-//     marginTop: theme.spacing(1),
-//   },
-// }));
+
 
 const ReviewCard: React.FC<ReviewCardProps> = ({
   imageUrl,
@@ -38,7 +20,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   return (
     <Card
       className={styles.card}
-      sx={{ display: "flex", justifyContent: "flex-start", alignItems:"start" }}
+      sx={{ display: "flex", justifyContent: "flex-start", alignItems:"start",marginY:2 }}
     >
       <Avatar alt={name} src={imageUrl} className={styles.avatar} />
       <CardContent>

@@ -1,4 +1,6 @@
 import AddIcon from "@mui/icons-material/Add";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import EditIcon from "@mui/icons-material/Edit";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import {
   Box,
@@ -10,15 +12,35 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
+import toast, { Toaster } from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import ReviewCard from "../../Components/ReviewCard/ReviewCard";
 import ReviewForm from "../../Components/ReviewForm/ReviewForm";
 import { useGetSingleBookQuery } from "../../redux/features/books/bookApi";
+import { useAppSelector } from "../../redux/hook";
 import { IComment } from "../../types/book";
+// toster
+const UserError = () => toast.error("You are not owner !");
+const UserSuccess = () => toast.success("You are  owner ");
+// const UserError = () => toast.error("You are not owner !");
+
 const BookDetailsPage = () => {
+  const { user } = useAppSelector((state) => state.user);
+
   const params = useParams();
   const { data, isLoading, error } = useGetSingleBookQuery(params?.id);
   console.log(data);
+
+  const handleEdit = () => {
+    if (!(user?._id === data?.data?.user)) {
+      UserError();
+    }
+  };
+  const handleDelete = () => {
+    if (!(user?._id === data?.data?.user)) {
+      UserError();
+    }
+  };
 
   return (
     <div>
@@ -67,6 +89,7 @@ const BookDetailsPage = () => {
               </Box>
             </Grid>
             <Grid item xs={12} md={8}>
+              <Toaster />
               <Box>
                 <Typography variant="h4" textTransform={"uppercase"}>
                   {data?.data?.title}
@@ -117,31 +140,50 @@ const BookDetailsPage = () => {
                 }}
               >
                 You Have Already Finished
+              </Button>{" "}
+              <br />
+              <Button
+                disabled={!user && true}
+                variant={"contained"}
+                onClick={handleEdit}
+                sx={{
+                  backgroundColor: "#FDAD00",
+                  borderRadius: 0,
+                  margin: 5,
+                  "&:hover": {
+                    backgroundColor: "#FDAD00",
+                    borderColor: "#FDAD00",
+                    color: "white",
+                  },
+                }}
+                startIcon={<EditIcon />}
+              >
+                Edit This Book
+              </Button>
+              <Button
+                disabled={!user && true}
+                variant={"contained"}
+                onClick={handleDelete}
+                sx={{
+                  backgroundColor: "#EF2853",
+                  borderRadius: 0,
+                  marginY: 5,
+                  "&:hover": {
+                    backgroundColor: "#EF2853",
+                    borderColor: "#EF2853",
+                    color: "white",
+                  },
+                }}
+                endIcon={<DeleteForeverIcon />}
+              >
+                Delete
               </Button>
             </Grid>
             <Grid item xs={12}>
               <Typography variant="h4">Reviews:</Typography>{" "}
               <hr color="#e2e2e2" />
               <Box display={"flex"} justifyContent={"flex-end"}>
-                {/* <Button
-                  variant={"outlined"}
-                  disableElevation
-                  sx={{
-                    transition: "all 0.3s ease-in",
-                    borderColor: "#EA529B",
-                    color: "#EA529B",
-                    borderRadius: 0,
-                    marginY: 2,
-                    "&:hover": {
-                      backgroundColor: "#EA529B",
-                      borderColor: "#EA529B",
-                      color: "white",
-                    },
-                  }}
-                >
-                  Submit your Review
-                </Button> */}
-                <ReviewForm />
+                <ReviewForm bookId={data?.data?._id} />
               </Box>
               <Box>
                 {data?.data?.reviews?.length &&

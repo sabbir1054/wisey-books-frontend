@@ -7,7 +7,11 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setUser(localStorage.getItem("user")));
+    const userData: string = localStorage.getItem("user");
+    // if (!userData===null) {
+      dispatch(setUser(JSON.parse(userData)));
+    // }
+    
   }, [dispatch]);
 
   return (
