@@ -24,9 +24,15 @@ import {
   useGetReviewQuery,
   useGetSingleBookQuery,
 } from "../../redux/features/books/bookApi";
+import { useAddToFinishedListMutation } from "../../redux/features/finishedList/finishedlistApi";
+import { useAddToReadSoonMutation } from "../../redux/features/readSoon/readSoonApi";
+import { useGetUserUpdatedDataQuery } from "../../redux/features/user/userApi";
+import { useAddToWishlistMutation } from "../../redux/features/wishlist/wishlistApi";
 import { useAppSelector } from "../../redux/hook";
 import { IComment } from "../../types/book";
 // toster
+const ErrorMessage = () => toast.error("Not Added!");
+const SuccessMessage = () => toast.success("Successfully Added!");
 const UserError = () => toast.error("You are not owner !");
 const UserSuccess = () => toast.success("You are  owner ");
 const deleteErrorM = () => toast.error("Failed to delete !");
@@ -40,7 +46,23 @@ const BookDetailsPage = () => {
     deleteBook,
     { data: deleteData, isLoading: deleteIsLoading, error: deleteError },
   ] = useDeleteBookMutation("");
-  const { user } = useAppSelector((state) => state.user);
+  const { user: oldUser } = useAppSelector((state) => state.user);
+  const [
+    addToWishlist,
+    { data: wishlistData, isLoading: wishlistLoading, error: wishlistError },
+  ] = useAddToWishlistMutation();
+  const [
+    addToReadSoon,
+    { data: readSoonData, isLoading: readSoonLoading, error: readSoonError },
+  ] = useAddToReadSoonMutation();
+  const [
+    addToFinishedList,
+    { data: finishedData, isLoading: finishedLoading, error: finishedError },
+  ] = useAddToFinishedListMutation();
+
+  const { data: userNewData } = useGetUserUpdatedDataQuery(oldUser?._id);
+  const user = userNewData?.data;
+
   let wishlist;
   let readSoon;
   let finished;
@@ -50,6 +72,32 @@ const BookDetailsPage = () => {
     readSoon = user?.readSoon;
     finished = user?.finishedBook;
   }
+
+  const handleWishlist = () => {
+    addToWishlist({ userId: user?._id, bookId: params.id });
+  };
+  const handleReadSoon = () => {
+    addToReadSoon({ userId: user?._id, bookId: params.id });
+  };
+  const handleFinished = () => {
+    addToFinishedList({ userId: user?._id, bookId: params.id });
+  };
+  useEffect(() => {
+    if (wishlistData || readSoonData || finishedData) {
+      SuccessMessage();
+    }
+
+    if (wishlistError || readSoonError || finishedError) {
+      ErrorMessage();
+    }
+  }, [
+    wishlistData,
+    wishlistError,
+    readSoonData,
+    readSoonError,
+    finishedError,
+    finishedData,
+  ]);
 
   const { data: reviews } = useGetReviewQuery(params.id);
 
@@ -115,7 +163,10 @@ const BookDetailsPage = () => {
                 }}
               >
                 <Tooltip title="Add to wishlist">
-                  <IconButton sx={{ color: "#F27E01" }}>
+                  <IconButton
+                    sx={{ color: "#F27E01" }}
+                    onClick={handleWishlist}
+                  >
                     {wishlist?.includes(params.id) ? (
                       <FavoriteIcon />
                     ) : (
@@ -124,7 +175,10 @@ const BookDetailsPage = () => {
                   </IconButton>
                 </Tooltip>
                 <Tooltip title="Plan to read">
-                  <IconButton sx={{ color: "#F27E01" }}>
+                  <IconButton
+                    sx={{ color: "#F27E01" }}
+                    onClick={handleReadSoon}
+                  >
                     {readSoon?.includes(params.id) ? <DoneIcon /> : <AddIcon />}
                   </IconButton>
                 </Tooltip>
@@ -168,6 +222,7 @@ const BookDetailsPage = () => {
                 </Button>
               ) : (
                 <Button
+                  onClick={handleFinished}
                   variant={"outlined"}
                   disableElevation
                   sx={{
