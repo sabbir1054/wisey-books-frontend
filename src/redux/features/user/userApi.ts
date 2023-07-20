@@ -17,10 +17,15 @@ const userApi = api.injectEndpoints({
         body: data,
       }),
     }),
+    getUserUpdatedData: builder.query({
+      query: (id) => `/users/${id}`,
+      providesTags:["wishlist"]
+    }),
   }),
 });
 
 export const {
   useUserSignInMutation,
-  useUserSignUpMutation
+  useUserSignUpMutation,
+  useGetUserUpdatedDataQuery,
 } = userApi;

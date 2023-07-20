@@ -1,6 +1,8 @@
 import AddIcon from "@mui/icons-material/Add";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import DoneIcon from "@mui/icons-material/Done";
 import EditIcon from "@mui/icons-material/Edit";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import {
   Box,
@@ -39,6 +41,16 @@ const BookDetailsPage = () => {
     { data: deleteData, isLoading: deleteIsLoading, error: deleteError },
   ] = useDeleteBookMutation("");
   const { user } = useAppSelector((state) => state.user);
+  let wishlist;
+  let readSoon;
+  let finished;
+
+  if (user) {
+    wishlist = user?.wishlist;
+    readSoon = user?.readSoon;
+    finished = user?.finishedBook;
+  }
+
   const { data: reviews } = useGetReviewQuery(params.id);
 
   const { data, isLoading, error } = useGetSingleBookQuery(params?.id);
@@ -104,12 +116,16 @@ const BookDetailsPage = () => {
               >
                 <Tooltip title="Add to wishlist">
                   <IconButton sx={{ color: "#F27E01" }}>
-                    <FavoriteBorderIcon />
+                    {wishlist?.includes(params.id) ? (
+                      <FavoriteIcon />
+                    ) : (
+                      <FavoriteBorderIcon />
+                    )}
                   </IconButton>
                 </Tooltip>
                 <Tooltip title="Plan to read">
                   <IconButton sx={{ color: "#F27E01" }}>
-                    <AddIcon />
+                    {readSoon?.includes(params.id) ? <DoneIcon /> : <AddIcon />}
                   </IconButton>
                 </Tooltip>
               </Box>
@@ -133,40 +149,44 @@ const BookDetailsPage = () => {
                   {data?.data?.publicationDate}
                 </Typography>
               </Box>
-              <Button
-                variant={"outlined"}
-                disableElevation
-                sx={{
-                  transition: "all 0.3s ease-in",
-                  borderColor: "#EA529B",
-                  color: "#EA529B",
-                  borderRadius: 0,
-                  marginY: 2,
-                  "&:hover": {
+              {finished?.includes(params.id) ? (
+                <Button
+                  variant={"contained"}
+                  disableElevation
+                  sx={{
                     backgroundColor: "#EA529B",
+                    borderRadius: 0,
+                    marginY: 5,
+                    "&:hover": {
+                      backgroundColor: "#EA529B",
+                      borderColor: "#EA529B",
+                      color: "white",
+                    },
+                  }}
+                >
+                  You Have Already Finished
+                </Button>
+              ) : (
+                <Button
+                  variant={"outlined"}
+                  disableElevation
+                  sx={{
+                    transition: "all 0.3s ease-in",
                     borderColor: "#EA529B",
-                    color: "white",
-                  },
-                }}
-              >
-                Mark as Finished
-              </Button>
-              <Button
-                variant={"contained"}
-                disableElevation
-                sx={{
-                  backgroundColor: "#EA529B",
-                  borderRadius: 0,
-                  marginY: 5,
-                  "&:hover": {
-                    backgroundColor: "#EA529B",
-                    borderColor: "#EA529B",
-                    color: "white",
-                  },
-                }}
-              >
-                You Have Already Finished
-              </Button>{" "}
+                    color: "#EA529B",
+                    borderRadius: 0,
+                    marginY: 2,
+                    "&:hover": {
+                      backgroundColor: "#EA529B",
+                      borderColor: "#EA529B",
+                      color: "white",
+                    },
+                  }}
+                >
+                  Mark as Finished
+                </Button>
+              )}
+
               <br />
               <Button
                 disabled={!user && true}

@@ -3,16 +3,18 @@ import { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import MainLayout from "./layouts/MainLayouts/MainLayout";
 import { setUser } from "./redux/features/user/userSlice";
+import { useAppSelector } from "./redux/hook";
 import { IUser } from "./types/user";
 
 function App() {
+  const { user } = useAppSelector((state) => state.user);
+
   const dispatch = useDispatch();
   const userData = localStorage.getItem("user");
   let data: IUser;
   if (userData !== "undefined") {
     data = JSON.parse(userData);
   }
-
 
   useEffect(() => {
     dispatch(setUser(data));

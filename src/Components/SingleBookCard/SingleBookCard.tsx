@@ -1,16 +1,58 @@
 import AddIcon from "@mui/icons-material/Add";
+import DoneIcon from "@mui/icons-material/Done";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import { Box, IconButton, Tooltip, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import { useEffect } from "react";
+import { toast } from "react-hot-toast";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useAddToWishlistMutation } from "../../redux/features/wishlist/wishlistApi";
+import { useAppSelector } from "../../redux/hook";
 import { IBook } from "../../types/book";
 import styles from "./SingleBookCard.module.css";
+import { useGetUserUpdatedDataQuery } from "../../redux/features/user/userApi";
 interface IProps {
   book: IBook;
 }
+const ErrorMessage = () => toast.error("Not Added!");
+const SuccessMessage = () => toast.success("Successfully Added!");
 const SingleBookCard = ({ book }: IProps) => {
+  const { user: oldUser } = useAppSelector(state => state.user);
+  const [
+    addToWishlist,
+    { data: wishlistData, isLoading: wishlistLoading, error: wishlistError },
+  ] = useAddToWishlistMutation();
+  const { data: userNewData } = useGetUserUpdatedDataQuery(oldUser?._id);
+    const user=userNewData?.data
+
+ 
+  
+  let wishlist;
+  let readSoon;
+  let finished;
+
+  if (user) {
+    wishlist = user?.wishlist;
+    readSoon = user?.readSoon;
+    finished = user?.finishedBook;
+  }
+
+  const handleWishlist = () => {
+    addToWishlist({ userId: user?._id, bookId: book?._id });
+  };
+
+  useEffect(() => {
+    if (wishlistData) {
+      SuccessMessage();
+    }
+
+    if (wishlistError) {
+      ErrorMessage();
+    }
+  }, [wishlistData, wishlistError]);
+
   const navigate = useNavigate();
 
   const goToDetailsPage = () => {
@@ -54,20 +96,24 @@ const SingleBookCard = ({ book }: IProps) => {
             }}
           >
             <Tooltip title="Add to wishlist">
-              <IconButton sx={{ color: "#F27E01" }}>
-                <FavoriteBorderIcon />
+              <IconButton sx={{ color: "#F27E01" }} onClick={handleWishlist}>
+                {wishlist?.includes(book?._id) ? (
+                  <FavoriteIcon />
+                ) : (
+                  <FavoriteBorderIcon />
+                )}
               </IconButton>
             </Tooltip>
             <Tooltip title="Plan to read">
               <IconButton sx={{ color: "#F27E01" }}>
-                <AddIcon />
+                {readSoon?.includes(book?._id) ? <DoneIcon /> : <AddIcon />}
               </IconButton>
             </Tooltip>
-            <Tooltip title="Mark as Done">
+            {/* <Tooltip title="Mark as Done">
               <IconButton sx={{ color: "#F27E01" }}>
                 <TaskAltIcon />
               </IconButton>
-            </Tooltip>
+            </Tooltip> */}
           </Box>
 
           <NavLink
