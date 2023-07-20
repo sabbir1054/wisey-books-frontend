@@ -16,7 +16,7 @@ const CollectionPage = () => {
   const { data: finishedData } = useGetFinishedListQuery(user?._id);
   useEffect(() => {
     if (!user) {
-    //   navigate("/signin");
+      //   navigate("/signin");
     }
   }, [user]);
 

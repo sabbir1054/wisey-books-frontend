@@ -8,27 +8,31 @@ import CardContent from "@mui/material/CardContent";
 import { useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useAddToReadSoonMutation } from "../../redux/features/readSoon/readSoonApi";
+import { useGetUserUpdatedDataQuery } from "../../redux/features/user/userApi";
 import { useAddToWishlistMutation } from "../../redux/features/wishlist/wishlistApi";
 import { useAppSelector } from "../../redux/hook";
 import { IBook } from "../../types/book";
 import styles from "./SingleBookCard.module.css";
-import { useGetUserUpdatedDataQuery } from "../../redux/features/user/userApi";
 interface IProps {
   book: IBook;
 }
 const ErrorMessage = () => toast.error("Not Added!");
 const SuccessMessage = () => toast.success("Successfully Added!");
 const SingleBookCard = ({ book }: IProps) => {
-  const { user: oldUser } = useAppSelector(state => state.user);
+  const { user: oldUser } = useAppSelector((state) => state.user);
   const [
     addToWishlist,
     { data: wishlistData, isLoading: wishlistLoading, error: wishlistError },
   ] = useAddToWishlistMutation();
-  const { data: userNewData } = useGetUserUpdatedDataQuery(oldUser?._id);
-    const user=userNewData?.data
+  const [
+    addToReadSoon,
+    { data: readSoonData, isLoading: readSoonLoading, error: readSoonError },
+  ] = useAddToReadSoonMutation();
 
- 
-  
+  const { data: userNewData } = useGetUserUpdatedDataQuery(oldUser?._id);
+  const user = userNewData?.data;
+
   let wishlist;
   let readSoon;
   let finished;
@@ -42,16 +46,18 @@ const SingleBookCard = ({ book }: IProps) => {
   const handleWishlist = () => {
     addToWishlist({ userId: user?._id, bookId: book?._id });
   };
-
+  const handleReadSoon = () => {
+    addToReadSoon({ userId: user?._id, bookId: book?._id });
+  };
   useEffect(() => {
-    if (wishlistData) {
+    if (wishlistData || readSoonData) {
       SuccessMessage();
     }
 
-    if (wishlistError) {
+    if (wishlistError || readSoonError) {
       ErrorMessage();
     }
-  }, [wishlistData, wishlistError]);
+  }, [wishlistData, wishlistError, readSoonData, readSoonError]);
 
   const navigate = useNavigate();
 
@@ -105,7 +111,7 @@ const SingleBookCard = ({ book }: IProps) => {
               </IconButton>
             </Tooltip>
             <Tooltip title="Plan to read">
-              <IconButton sx={{ color: "#F27E01" }}>
+              <IconButton sx={{ color: "#F27E01" }} onClick={handleReadSoon}>
                 {readSoon?.includes(book?._id) ? <DoneIcon /> : <AddIcon />}
               </IconButton>
             </Tooltip>

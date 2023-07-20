@@ -10,7 +10,7 @@ const readSoonApi = api.injectEndpoints({
       query: (data) => ({
         url: "/users/add-readSoon",
         method: "PATCH",
-        data: data,
+        body: data,
       }),
       invalidatesTags: ["readSoon"],
     }),

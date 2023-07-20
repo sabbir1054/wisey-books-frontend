@@ -19,7 +19,7 @@ const userApi = api.injectEndpoints({
     }),
     getUserUpdatedData: builder.query({
       query: (id) => `/users/${id}`,
-      providesTags:["wishlist"]
+      providesTags:["wishlist","readSoon","finishedList"]
     }),
   }),
 });

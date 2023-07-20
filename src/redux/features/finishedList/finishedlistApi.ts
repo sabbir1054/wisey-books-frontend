@@ -10,7 +10,7 @@ const finishedApi = api.injectEndpoints({
       query: (data) => ({
         url: "/users/add-finished",
         method: "PATCH",
-        data: data,
+        body: data,
       }),
       invalidatesTags: ["finishedList"],
     }),
