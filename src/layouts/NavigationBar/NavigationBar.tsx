@@ -20,8 +20,7 @@ const pages = [
 
 const NavigationBar = () => {
   const { user } = useAppSelector((state) => state?.user);
- 
-  
+
   const dispatch = useDispatch();
 
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(

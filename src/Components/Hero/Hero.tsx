@@ -33,7 +33,7 @@ const Hero = () => {
                   February
                 </span>
               </Typography>
-              <NavLink to="/all-books">
+              <NavLink to="/books">
                 {" "}
                 <Button
                   sx={{

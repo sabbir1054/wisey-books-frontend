@@ -45,7 +45,7 @@ const BookDetailsPage = () => {
   const [
     deleteBook,
     { data: deleteData, isLoading: deleteIsLoading, error: deleteError },
-  ] = useDeleteBookMutation("");
+  ] = useDeleteBookMutation();
   const { user: oldUser } = useAppSelector((state) => state.user);
   const [
     addToWishlist,
